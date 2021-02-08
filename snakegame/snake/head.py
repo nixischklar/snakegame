@@ -1,0 +1,14 @@
+from kivy.uix.widget import Widget
+from kivy.vector import Vector
+
+
+class SnakeHead(Widget):
+    orientation = (Player_Size, 0)
+
+    def reset_pos(self):
+        self.pos = (0, 0)
+        self.orientation = (Player_Size, 0)
+
+    def move(self):
+        self.pos = Vector(*self.orientation) + self.pos
+
